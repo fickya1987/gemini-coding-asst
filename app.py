@@ -15,6 +15,7 @@ genai.configure(api_key=api_key)
 #     if 'generateContent' in m.supported_generation_methods:
 #         print(m.name)
 
+#Test Script
 # model = genai.GenerativeModel('gemini-pro')
 # response = model.generate_content("Can you write a sample code in python \n"
 #                                   "to find prime numbers between 2 integers?")
@@ -37,32 +38,6 @@ def complete_code(coding_lang, instruction):
     response = llm.generate_content(formatted_prompt)
 
     return response.text, coding_lang
-
-
-# if __name__ == '__main__':
-#     llm = genai.GenerativeModel('gemini-pro')
-#     coding_lang = "python"
-#     instruction = "Can you write a sample code in python to find prime numbers between 2 integers?"
-#     template = '''
-#     ### System:
-#     You are an exceptionally intelligent programmer who
-#     consistently delivers accurate and reliable responses
-#     to user instructions.
-#     ### User:
-#     {} in {}")
-#     '''
-#
-#     # prompt = PromptTemplate(input_variables=["coding_lang", "instruction"],
-#     #                         template=template)
-#
-#     formatted_prompt = template.format(instruction, coding_lang)
-#     #
-#     # formatted_prompt = ("Can you write a sample code in python to \n"
-#     #                     "find prime numbers between 2 integers?")
-#     print(formatted_prompt)
-#     response = llm.generate_content(formatted_prompt)
-#
-#     print(response.text)
 
 def separate_code_and_text(input_text):
     # Find the position of the first and last "/"
